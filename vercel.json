@@ -3,7 +3,15 @@
     "builds": [
       {
         "src": "api/index.py",
-        "use": "@vercel/python"
+        "use": "@vercel/python",
+        "config": {
+          "maxDuration": 60,
+          "includeFiles": [
+            "api/**/*.py",
+            "pipfile",
+            "pipfile.lock"
+          ]
+        }
       },
       {
         "src": "package.json",
@@ -15,12 +23,6 @@
         "src": "/api/(.*)",
         "dest": "/api/index.py"
       }
-    ],
-    "functions": {
-      "api/**": {
-        "maxDuration": 60,
-        "excludeFiles": "{.next,*.cache,node_modules,public,app}/**"
-      }
-    }
+    ]
   }
   
