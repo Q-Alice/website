@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import NextImage from 'next/image';
 import Link from 'next/link';
 
-import LogoImage from '@/public/company-logo.png';
+import LogoImage from '@/public/qalice-logo.png';
 
 import HeaderNavLink from './HeaderNavLink';
 
@@ -12,6 +12,7 @@ const menuItems = [
   { label: `Info`, url: `info` },
   { label: `Home`, url: `home` },
   { label: `Invest`, url: `invest` },
+  { label: `QApps`, url: `qapps`},
   { label: 'Log out', url: '/' },
 ];
 
@@ -39,11 +40,11 @@ const NavMenu: React.FC<NavMenuProps> = ({}) => {
       {({ open }) => (
         <>
           <div className='mx-auto max-w-7xl px-2 sm:px-4 lg:px-8'>
-            <div className='flex h-16 justify-between border-b border-black'>
+            <div className='flex h-24 justify-between border-b border-black'>
               <div className='flex px-2 lg:px-0 items-center'>
                 <Link href="/home">
                   <NextImage
-                    className='h-8 w-auto'
+                    className='h-16 w-auto'
                     src={LogoImage}
                     alt=''
                     width={300}

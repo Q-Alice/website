@@ -32,7 +32,7 @@ export default function Home() {
         {/* Company Logo */}
         <div className="mb-4">
           <Image
-            src="/company-logo.png" // Replace with the path to your company logo
+            src="/qalice-logo.png" // Replace with the path to your company logo
             alt="Company Logo"
             width={300} // Adjust width as needed
             height={300} // Adjust height as needed
