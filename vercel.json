@@ -11,8 +11,7 @@
             "Pipfile",
             "Pipfile.lock",
             "requirements.txt"
-          ],
-          "excludeFiles": "{.next,*.cache,node_modules,public,app}/**"
+          ]
         }
       },
       {
