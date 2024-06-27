@@ -1,0 +1,12 @@
+# .vercelignore
+node_modules/
+.next/
+.git/
+*.log
+*.cache
+public/
+*.pyc
+__pycache__/
+tests/
+.env
+.DS_Store
