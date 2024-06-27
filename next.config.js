@@ -9,8 +9,15 @@ const nextConfig = {
             ? 'http://127.0.0.1:5328/api/:path*'
             : '/api/',
       },
-    ]
+    ];
   },
-}
+  experimental: {
+    outputFileTracingIncludes: {
+      '/api/index.py': [
+        '/path/to/your/virtualenv/lib/python3.9/site-packages/**',
+      ],
+    },
+  },
+};
 
-module.exports = nextConfig
+module.exports = nextConfig;
