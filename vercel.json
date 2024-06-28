@@ -3,52 +3,28 @@
     "builds": [
       {
         "src": "package.json",
-        "use": "@vercel/node",
-        "config": {
-          "includeFiles": [
-            "app.py",
-            "requirements.txt",
-            "Pipfile",
-            "Pipfile.lock"
-          ],
-          "excludeFiles": [
-            "tests/*",
-            "docs/*",
-            "__pycache__/*",
-            "*.md",
-            "*.log"
-          ]
-        }
+        "use": "@vercel/node"
       },
       {
-        "src": "app.py",
-        "use": "@vercel/python",
-        "config": {
-          "includeFiles": [
-            "app.py",
-            "requirements.txt",
-            "Pipfile",
-            "Pipfile.lock"
-          ],
-          "excludeFiles": [
-            "tests/*",
-            "docs/*",
-            "__pycache__/*",
-            "*.md",
-            "*.log"
-          ]
-        }
+        "src": "index.py",
+        "use": "@vercel/python"
       }
     ],
     "routes": [
       {
         "src": "/api/(.*)",
-        "dest": "/app.py"
+        "dest": "/index.py"
       },
       {
         "src": "/(.*)",
         "dest": "/"
       }
-    ]
+    ],
+    "functions": {
+      "api/*": {
+        "maxDuration": 10,
+        "memory": 1024
+      }
+    }
   }
   
