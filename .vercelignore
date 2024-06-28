@@ -8,3 +8,4 @@ tests/
 docs/
 node_modules/
 .qiskit/
+.qiskit_*_data/
