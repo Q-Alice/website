@@ -80,5 +80,7 @@ def compile_and_run():
     output = compile_and_run_quantum_code_from_file(filename, use_ibm_backend)
     return jsonify(output)
 
-if __name__ == "__main__":
-    app.run(debug=True, port=5328)
+
+if __name__ == '__main__':
+    app.run(port=5328)
+
