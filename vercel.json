@@ -40,16 +40,14 @@
         }
       }
     ],
-    "functions": {
-      "api/*": {
-        "maxDuration": 10,
-        "memory": 1024
-      }
-    },
     "routes": [
       {
-        "src": "/(.*)",
+        "src": "/api/(.*)",
         "dest": "/app.py"
+      },
+      {
+        "src": "/(.*)",
+        "dest": "/"
       }
     ]
   }
