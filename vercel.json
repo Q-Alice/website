@@ -1,29 +1,8 @@
 {
-    "version": 2,
-    "builds": [
-      {
-        "src": "api/index.py",
-        "use": "@vercel/python",
-        "config": {
-          "maxDuration": 60,
-          "includeFiles": [
-            "api/**/*.py",
-            "Pipfile",
-            "Pipfile.lock",
-            "requirements.txt"
-          ]
+    "functions": {
+        "api/**": {
+            "maxDuration": 60,
+            "excludeFiles": "{.next,*.cache,node_modules,public,app}/**"
         }
-      },
-      {
-        "src": "package.json",
-        "use": "@vercel/next"
-      }
-    ],
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/api/index.py"
-      }
-    ]
-  }
-  
+    }
+}
