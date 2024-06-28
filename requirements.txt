@@ -1,6 +1,5 @@
 Flask==2.0.1
 Werkzeug==2.3.0
-requests==2.31.0
 qiskit==0.46.0
 qiskit-aer==0.10.3
 qiskit-ibmq-provider==0.19.2

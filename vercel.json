@@ -1,8 +1,56 @@
 {
-    "functions": {
-        "api/**": {
-            "maxDuration": 60,
-            "excludeFiles": "{.next,*.cache,node_modules,public,app}/**"
+    "version": 2,
+    "builds": [
+      {
+        "src": "package.json",
+        "use": "@vercel/node",
+        "config": {
+          "includeFiles": [
+            "app.py",
+            "requirements.txt",
+            "Pipfile",
+            "Pipfile.lock"
+          ],
+          "excludeFiles": [
+            "tests/*",
+            "docs/*",
+            "__pycache__/*",
+            "*.md",
+            "*.log"
+          ]
         }
-    }
-}
+      },
+      {
+        "src": "app.py",
+        "use": "@vercel/python",
+        "config": {
+          "includeFiles": [
+            "app.py",
+            "requirements.txt",
+            "Pipfile",
+            "Pipfile.lock"
+          ],
+          "excludeFiles": [
+            "tests/*",
+            "docs/*",
+            "__pycache__/*",
+            "*.md",
+            "*.log"
+          ]
+        }
+      }
+    ],
+    "functions": {
+      "api/*": {
+        "maxDuration": 10,
+        "memory": 1024
+      }
+    },
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "/app.py"
+      }
+    ]
+  }
+  
