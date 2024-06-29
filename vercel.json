@@ -7,16 +7,6 @@
         "includeFiles": "api/index.py,requirements.txt,api/qasm_files/**",
         "excludeFiles": ".next/**,*.cache/**,node_modules/**,public/**,app/**,tests/**,docs/**,__pycache__/**,*.md,*.log"
       }
-    },
-    "routes": [
-      {
-        "src": "/api/(.*)",
-        "dest": "/api/index.py"
-      },
-      {
-        "src": "/(.*)",
-        "dest": "/"
-      }
-    ]
+    }
   }
   
