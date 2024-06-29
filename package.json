@@ -12,9 +12,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "vercel-build": "pip install -r requirements.txt --no-cache-dir && next build && npm run compress",
-    "compress": "python3 -m zipapp api -o api.pyz -m 'api.index:app'",
-    "postinstall": "pip uninstall -y scipy"
+    "vercel-build": "pip install -r requirements.txt --no-cache-dir && python3 remove_scipy.py && next build && npm run compress",
+    "compress": "python3 -m zipapp api -o api.pyz -m 'api.index:app'"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
