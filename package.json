@@ -13,8 +13,8 @@
     "start": "next start",
     "lint": "next lint",
     "vercel-build": "pip install -r requirements.txt --no-cache-dir && next build && npm run compress",
-    "compress": "python -m zipapp api -o api.pyz"
-   },
+    "compress": "pip install zipapp && python -m zipapp api -o api.pyz"
+  },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
     "@heroicons/react": "^2.1.1",

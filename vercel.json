@@ -1,12 +1,21 @@
 {
-    "version": 2,
-    "functions": {
-      "api/**": {
-        "maxDuration": 60,
-        "memory": 1024,
-        "includeFiles": "api/index.py,requirements.txt,api/qasm_files/**",
-        "excludeFiles": ".next/**,*.cache/**,node_modules/**,public/**,app/**,tests/**,docs/**,__pycache__/**,*.md,*.log"
-      }
+  "version": 2,
+  "functions": {
+    "api/**": {
+      "maxDuration": 60,
+      "memory": 1024,
+      "includeFiles": "api.pyz,requirements.txt,runtime.txt",
+      "excludeFiles": ".next/**,*.cache/**,node_modules/**,public/**,app/**,tests/**,docs/**,__pycache__/**,*.md,*.log"
     }
-  }
-  
+  },
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api.pyz"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/"
+    }
+  ]
+}
