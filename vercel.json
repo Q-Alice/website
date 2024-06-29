@@ -1,6 +1,6 @@
 {
   "functions": {
-    "api/index.py": {
+    "api/api.pyz": {
       "includeFiles": "requirements.txt runtime.txt",
       "excludeFiles": "{.next,*.cache,node_modules,public,app}/**",
       "maxDuration": 60,
@@ -10,7 +10,7 @@
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/index.py"
+      "dest": "/api/api.pyz"
     },
     {
       "src": "/(.*)",
