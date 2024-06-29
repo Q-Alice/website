@@ -1,16 +1,17 @@
 {
+  "version": 2,
   "functions": {
-    "api/api.pyz": {
-      "includeFiles": "requirements.txt runtime.txt",
-      "excludeFiles": "{.next,*.cache,node_modules,public,app}/**",
+    "api/**": {
       "maxDuration": 60,
-      "memory": 1024
+      "memory": 1024,
+      "includeFiles": "api.pyz,requirements.txt,runtime.txt",
+      "excludeFiles": ".next/**,*.cache/**,node_modules/**,public/**,app/**,tests/**,docs/**,__pycache__/**,*.md,*.log"
     }
   },
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api/api.pyz"
+      "dest": "/api.pyz"
     },
     {
       "src": "/(.*)",
