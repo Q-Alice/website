@@ -6,4 +6,3 @@ qiskit-aer==0.10.3
 qiskit-ibmq-provider==0.19.2
 matplotlib==3.5.1
 numpy==1.22.0
-zipapp==0.0.0

@@ -6,14 +6,14 @@
     "node": "18.x"
   },
   "scripts": {
-    "flask-dev": "FLASK_DEBUG=1 FLASK_APP=api/index.py python3 -m flask run -p 5328",
-    "next-dev": "next dev",
-    "dev": "concurrently \"npm run next-dev\" \"npm run flask-dev\"",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint",
-    "vercel-build": "pip install -r requirements.txt --no-cache-dir && next build && npm run compress",
-    "compress": "pip install zipapp && python -m zipapp api -o api.pyz"
+  "flask-dev": "FLASK_DEBUG=1 FLASK_APP=api.index python3 -m flask run -p 5328",
+  "next-dev": "next dev",
+  "dev": "concurrently \"npm run next-dev\" \"npm run flask-dev\"",
+  "build": "next build",
+  "start": "next start",
+  "lint": "next lint",
+  "vercel-build": "pip install -r requirements.txt --no-cache-dir && next build && npm run compress",
+  "compress": "python3 -m zipapp api -o api.pyz"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
