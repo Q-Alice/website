@@ -1,15 +1,7 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "Dockerfile",
-      "use": "@vercel/static-build"
+    "functions": {
+        "api/**": {
+            "excludeFiles": "{.next,*.cache,node_modules,public,app,requirements.txt}/**"
+        }
     }
-  ],
-  "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/api/index.py"
-    }
-  ]
 }

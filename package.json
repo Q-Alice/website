@@ -11,9 +11,7 @@
     "dev": "concurrently \"npm run next-dev\" \"npm run flask-dev\"",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "vercel-build": "pip install -r requirements.txt --no-cache-dir && python3 remove_scipy.py && next build && npm run compress",
-    "compress": "python3 -m zipapp api -o api.pyz -m 'api.index:app'"
+    "lint": "next lint"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.18",
