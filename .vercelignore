@@ -1,11 +1,5 @@
-# Ignore unnecessary files and directories
-__pycache__/
-*.pyc
-*.pyo
-*.log
-*.md
-tests/
-docs/
+requirements.txt
+Pipfile
+Pipfile.lock
 node_modules/
-.qiskit/
-.qiskit_*_data/
+*.cache/

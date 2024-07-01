@@ -1,21 +1,15 @@
 {
   "version": 2,
-  "functions": {
-    "api/**": {
-      "maxDuration": 60,
-      "memory": 1024,
-      "includeFiles": "api.pyz,requirements.txt,runtime.txt",
-      "excludeFiles": ".next/**,*.cache/**,node_modules/**,public/**,app/**,tests/**,docs/**,__pycache__/**,*.md,*.log"
+  "builds": [
+    {
+      "src": "Dockerfile",
+      "use": "@vercel/docker"
     }
-  },
+  ],
   "routes": [
     {
       "src": "/api/(.*)",
-      "dest": "/api.pyz"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/"
+      "dest": "/api/index.py"
     }
   ]
 }

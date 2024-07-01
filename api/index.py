@@ -1,5 +1,5 @@
 from flask import Flask, request, jsonify
-from qiskit import QuantumCircuit, transpile, IBMQ
+from qiskit import Aer, QuantumCircuit, transpile, IBMQ
 from qiskit.visualization import plot_histogram, circuit_drawer
 from qiskit.providers.ibmq import least_busy
 import matplotlib.pyplot as plt
@@ -21,7 +21,7 @@ def list_qasm_files():
     except Exception as e:
         return {"error": str(e)}, 500
 
-def compile_and_run_quantum_code_from_file(filename):
+def compile_and_run_quantum_code_from_file(filename, use_ibm_backend=False):
     try:
         file_path = os.path.join(QASM_DIR, filename)
         with open(file_path, 'r') as file:
@@ -30,12 +30,18 @@ def compile_and_run_quantum_code_from_file(filename):
     except Exception as e:
         return {"error": str(e)}, 400
 
-    provider = IBMQ.get_provider(hub='ibm-q')
-    backend = least_busy(provider.backends(simulator=False))
+    if use_ibm_backend:
+        provider = IBMQ.get_provider(hub='ibm-q')
+        backend = least_busy(provider.backends(simulator=False))
+    else:
+        backend = Aer.get_backend('qasm_simulator')
 
     compiled_circuit = transpile(qc, backend)
-    job = backend.run(compiled_circuit)
-    result = job.result()
+    if use_ibm_backend:
+        job = backend.run(compiled_circuit)
+        result = job.result()
+    else:
+        result = backend.run(compiled_circuit).result()
 
     counts = result.get_counts(qc)
 
@@ -70,8 +76,9 @@ def get_qasm_files():
 def compile_and_run():
     data = request.json
     filename = data.get("filename")
-    output = compile_and_run_quantum_code_from_file(filename)
+    use_ibm_backend = data.get("use_ibm_backend", False)
+    output = compile_and_run_quantum_code_from_file(filename, use_ibm_backend)
     return jsonify(output)
 
-if __name__ == '__main__':
-    app.run(port=5328)
+if __name__ == "__main__":
+    app.run(debug=True, port=5328)
