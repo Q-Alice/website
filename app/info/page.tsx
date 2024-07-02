@@ -62,6 +62,17 @@ const Info = () => {
               ))}
             </ol>
           </div>
+          <div className="justify-center items-center rounded mb-16">
+          {/* GIF image */}
+          <Image
+            src="/math.gif"
+            alt="quantum"
+            width={400}
+            height={300}
+            layout="responsive"
+          />
+        </div>
+
           {/* Content for each section */}
           {navigationItems.map(item => (
             <div 

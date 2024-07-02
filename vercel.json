@@ -1,7 +1,19 @@
 {
-    "functions": {
-        "api/**": {
-            "excludeFiles": "{.next,*.cache,node_modules,public,app,requirements.txt}/**"
-        }
+  "version": 2,
+  "builds": [
+    {
+      "src": "api/index.py",
+      "use": "@vercel/python"
+    },
+    {
+      "src": "package.json",
+      "use": "@vercel/next"
     }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.py"
+    }
+  ]
 }
