@@ -20,11 +20,11 @@ export default function Home() {
     <main className="flex flex-col items-center justify-center h-screen bg-black relative">
       {/* Background GIF */}
       <div className="absolute inset-0 w-full h-full overflow-hidden z-0">
-        <Image
+      <Image
           src="/background.gif" // Replace with the path to your GIF file
           alt="Background GIF"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: 'cover' }}
         />
       </div>
       
@@ -32,7 +32,7 @@ export default function Home() {
         {/* Company Logo */}
         <div className="mb-4">
           <Image
-            src="/qalice-logo.png" // Replace with the path to your company logo
+            src="/whitelogo.png" // Replace with the path to your company logo
             alt="Company Logo"
             width={300} // Adjust width as needed
             height={300} // Adjust height as needed
@@ -42,7 +42,7 @@ export default function Home() {
         {/* Company Name */}
 
         {/* Company Phrase */}
-        <h2 className="text-white text-lg mb-6">A New Era of Quantum Applications</h2>
+        <h2 className="text-white text-lg mb-6">Journeying Through the Quantum Glass</h2>
 
         {/* Enter Button with loading state */}
         <button 

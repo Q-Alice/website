@@ -54,7 +54,7 @@ const Info = () => {
                 <li key={item.id}>
                   <span
                     onClick={() => scrollToSection(item.id)}
-                    className="cursor-pointer text-pink-500 hover:underline"
+                    className="cursor-pointer text-neorange hover:underline"
                   >
                     {item.label}
                   </span>

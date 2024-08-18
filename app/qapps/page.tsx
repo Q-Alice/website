@@ -67,7 +67,7 @@ export default function QApp() {
         </select>
         <button 
           type="submit" 
-          className="bg-blue-500 text-white p-2 rounded w-full md:w-1/2"
+          className="bg-neorange text-white p-2 rounded w-full md:w-1/2"
           disabled={loading}
         >
           {loading ? 'Running...' : 'Run'}

@@ -13,9 +13,9 @@ const CostOverview: React.FC<CostOverviewProps> = ({ totalCost, totalRaised }) =
   return (
     <div className="container mx-auto mt-10 px-4">
       <div className="max-w-3xl mx-auto bg-black rounded-lg shadow-lg py-8 px-6">
-        <h1 className="text-3xl font-semibold mb-6">Cost and Overview of Prototype</h1>
+        <h1 className="text-3xl text-black font-semibold mb-6">Overview of Prototype</h1>
         <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-4">Cost Breakdown</h2>
+          <h2 className="text-xl text-neorange font-semibold mb-4">Cost Breakdown</h2>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div className="p-4 bg-gray-100 rounded-lg text-black">
               <p><strong>Transmitters:</strong> $5,000</p>
@@ -34,8 +34,8 @@ const CostOverview: React.FC<CostOverviewProps> = ({ totalCost, totalRaised }) =
           <p className="text-sm text-gray-500">Please note that these estimates are rough and may vary based on specific requirements, negotiations, and additional expenses such as labor, facilities, and contingencies.</p>
         </div>
         <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-4">Prototype Overview</h2>
-          <ol className="list-decimal pl-8">
+          <h2 className="text-xl text-black font-semibold mb-4">Prototype Overview</h2>
+          <ol className="list-decimal text-black pl-8">
             <li>Transmitter: This is the starting point where the quantum information is generated or encoded into qubits.</li>
             <li>Qubit: Qubits are the basic units of quantum information.</li>
             <li>Laser Pulse: The qubits are encoded into laser pulses.</li>
@@ -43,18 +43,18 @@ const CostOverview: React.FC<CostOverviewProps> = ({ totalCost, totalRaised }) =
           </ol>
         </div>
         <div className="mb-8">
-          <h2 className="text-xl font-semibold mb-4">Fundraising Progress</h2>
+          <h2 className="text-xl text-black font-semibold mb-4">Fundraising Progress</h2>
           <div className="bg-gray-200 h-8 rounded-md overflow-hidden">
-            <div className="bg-blue-500 h-full" style={{ width: `${raisedPercentage > 100 ? 100 : raisedPercentage}%` }}></div>
+            <div className="bg-neorange h-full" style={{ width: `${raisedPercentage > 100 ? 100 : raisedPercentage}%` }}></div>
           </div>
-          <div className="flex justify-between mt-2">
+          <div className="flex text-black justify-between mt-2">
             <p>Total Raised: ${totalRaised}</p>
             <p>Opportunity Left: ${opportunityLeft}</p>
           </div>
         </div>
         <div>
-          <h2 className="text-xl font-semibold mb-4">Potential Return on Investment</h2>
-          <p>With a $10,000 investment, the total raised amount would increase to ${investmentReturn}. This additional funding could accelerate the development process and contribute to achieving project milestones more quickly.</p>
+          <h2 className="text-xl text-black font-semibold mb-4">Potential Return on Investment</h2>
+          <p className="text-black">With a $10,000 investment, the total raised amount would increase to ${investmentReturn}. This additional funding could accelerate the development process and contribute to achieving project milestones more quickly.</p>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@ const CostOverview: React.FC<CostOverviewProps> = ({ totalCost, totalRaised }) =
 };
 
 const InvestPage: React.FC = () => {
-  const totalCost = 75000; // Example value
+  const totalCost = 150000; // Example value
   const totalRaised = 6000; // Example value
 
   return <CostOverview totalCost={totalCost} totalRaised={totalRaised} />;

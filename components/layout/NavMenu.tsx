@@ -4,7 +4,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import NextImage from 'next/image';
 import Link from 'next/link';
 
-import LogoImage from '@/public/qalice-logo.png';
+import LogoImage from '@/public/logo.png';
 
 import HeaderNavLink from './HeaderNavLink';
 
@@ -62,7 +62,7 @@ const NavMenu: React.FC<NavMenuProps> = ({}) => {
                           {item.label}
                         </button>
                       ) : (
-                        <button className='text-white hover:text-gray-200'>
+                        <button className='text-black hover:text-neorange'>
                           {item.label}
                         </button>
                       )}
@@ -71,7 +71,7 @@ const NavMenu: React.FC<NavMenuProps> = ({}) => {
                 </div>
               </div>
               <div className='flex items-center lg:hidden'>
-                <Disclosure.Button className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-purple-400'>
+                <Disclosure.Button className='relative inline-flex items-center justify-center rounded-md p-2 text-gray-400 hover:bg-gray-100 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-neorange'>
                   <span className='absolute -inset-0.5' />
                   <span className='sr-only'>Open main menu</span>
                   {open ? (
@@ -90,13 +90,13 @@ const NavMenu: React.FC<NavMenuProps> = ({}) => {
               {menuItems.map((item) => {
                 return (
                   <Link href={item.url} key={item.label}>
-                    <div className='block py-2 text-base font-medium text-white-600 hover:text-white-400'>
+                    <div className='block py-2 text-base font-medium text-black hover:text-neorange'>
                       {item.label === 'Launch App' ? (
                         <button className='text-black bg-white px-3 py-2 rounded-full'>
                           {item.label}
                         </button>
                       ) : (
-                        <button className='text-white hover:text-gray-200'>
+                        <button className='text-black hover:text-neorange'>
                           {item.label}
                         </button>
                       )}
