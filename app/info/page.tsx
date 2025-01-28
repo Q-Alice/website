@@ -11,7 +11,7 @@ interface NavigationItem {
 
 const Info = () => {
   const [navigationItems] = useState<NavigationItem[]>([
-    { id: 0, label: 'Introduction to Qalice' },
+    { id: 0, label: 'Introduction to 😺Qalice' },
     { id: 1, label: 'Quantum Electrodynamic (QED)' },
     { id: 2, label: 'Interferometric Measurement' },
     { id: 3, label: 'Quantum State Tomography' },
@@ -44,7 +44,7 @@ const Info = () => {
       <div className="container mx-auto mt-20 flex justify-center items-center">
         {/* Left container */}
         <div className="w-2/3 p-4">
-          <h1 className="text-4xl text-center mb-8 font-bold">WHAT IS QALICE?</h1>
+          <h1 className="text-4xl text-center mb-8 font-bold">WHAT IS ?</h1>
 
           {/* Navigation */}
           <div className="mb-8">
@@ -85,20 +85,20 @@ const Info = () => {
               {item.id === 0 && (
                 <>
                   <p className="mb-4">
-                    <strong>What is Qalice?</strong><br />
-                    Qalice represents the pinnacle of quantum communication technology, integrating the groundbreaking Quantum Mirror Circuit Loop and Qubit Laser Encoding for Secure Superposition Dynamic Communications. It embodies a revolutionary approach to establishing secure and efficient communication channels at the quantum level.
+                    <strong>What is ?</strong><br />
+                     represents the pinnacle of quantum communication technology, integrating the groundbreaking Quantum Mirror Circuit Loop and Qubit Laser Encoding for Secure Superposition Dynamic Communications. It embodies a revolutionary approach to establishing secure and efficient communication channels at the quantum level.
                   </p>
                   <p className="mb-4">
                     <strong>The Quantum Mirror Circuit Loop:</strong><br />
-                    At the core of Qalice lies the Quantum Mirror Circuit Loop, a sophisticated framework that employs advanced deformable mirrors to achieve seamless superposition and entanglement of quantum states. This innovative loop enables dynamic processing and transmission of quantum information, setting new standards for quantum communication protocols.
+                    At the core of  lies the Quantum Mirror Circuit Loop, a sophisticated framework that employs advanced deformable mirrors to achieve seamless superposition and entanglement of quantum states. This innovative loop enables dynamic processing and transmission of quantum information, setting new standards for quantum communication protocols.
                   </p>
                   <p className="mb-4">
                     <strong>Qubit Laser Encoding for Secure Communications:</strong><br />
-                    Qalice leverages Qubit Laser Encoding to ensure the security and integrity of communication channels. By encoding information onto laser beams at the qubit level, Qalice establishes highly secure communication links resistant to interception and decryption attempts, thus safeguarding sensitive data from unauthorized access.
+                     leverages Qubit Laser Encoding to ensure the security and integrity of communication channels. By encoding information onto laser beams at the qubit level,  establishes highly secure communication links resistant to interception and decryption attempts, thus safeguarding sensitive data from unauthorized access.
                   </p>
                   <p className="mb-4">
                     <strong>Advanced Communication and Data Processing:</strong><br />
-                    Qalice revolutionizes communication and data processing by enabling real-time, high-speed transmission of quantum information. Through its integrated quantum error correction codes and entanglement swapping techniques, Qalice ensures reliable delivery of data with minimal latency and maximum security. Whether transmitting sensitive information across vast distances or processing complex datasets for quantum computing tasks, Qalice offers unparalleled capabilities for the future of quantum communication and data processing.
+                     revolutionizes communication and data processing by enabling real-time, high-speed transmission of quantum information. Through its integrated quantum error correction codes and entanglement swapping techniques,  ensures reliable delivery of data with minimal latency and maximum security. Whether transmitting sensitive information across vast distances or processing complex datasets for quantum computing tasks,  offers unparalleled capabilities for the future of quantum communication and data processing.
                   </p>
                 </>
               )}

@@ -33,7 +33,7 @@ export const generateQuantumExplanation = async (
         Authorization: `Bearer ${openaiApiKey}`,
       },
       body: JSON.stringify({
-        model: 'gpt-3.5-turbo-16k',
+        model: 'gpt-4o-mini',
         messages: [{ role: 'user', content: prompt }],
         max_tokens: 1000,
         temperature: 0.5

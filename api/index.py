@@ -102,7 +102,7 @@ def generate_explanation(risk_scores, histogram_base64, circuit_base64):
             'Content-Type': 'application/json',
         },
         json={
-            'model': 'gpt-3.5-turbo-16k',
+            'model': 'gpt-4o-mini',
             'messages': [{'role': 'user', 'content': prompt}],
             'max_tokens': 1000,
             'temperature': 0.5
